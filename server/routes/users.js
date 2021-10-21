@@ -41,8 +41,9 @@ router.get('/private', checkJwt, checkAdmin, (req, res) => {
 })
 
 // GET /api/v1/users/
-router.get('/', (req, res) => {
-  db.getUsers()
+router.get('/:id', (req, res) => {
+  const { id } = req.params
+  db.getUsers(id)
     .then(users => {
       res.json({ users })
       return null

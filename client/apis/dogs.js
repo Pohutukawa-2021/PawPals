@@ -2,7 +2,7 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getDogs (id, token) {
+export function getDogs (id) {
   return request.get(rootUrl + '/dogs/' + id)
     .then(res => {
       return res.body
@@ -12,7 +12,7 @@ export function getDogs (id, token) {
     })
 }
 
-export function addDogs (newDog, token) {
+export function addDogs (newDog) {
   return request.post(rootUrl + '/dogs/')
     .send(newDog)
     .then(res => {
@@ -23,7 +23,7 @@ export function addDogs (newDog, token) {
     })
 }
 
-export function updateDog (dogDetails, token) {
+export function updateDog (dogDetails) {
   return request.patch(rootUrl + '/dogs/update')
     .send(dogDetails)
     .then(res => {
@@ -34,7 +34,7 @@ export function updateDog (dogDetails, token) {
     })
 }
 
-export function deleteDog (id, token) {
+export function deleteDog (id) {
   return request.delete(rootUrl + '/dogs/')
     .send({ id })
     .then(res => {

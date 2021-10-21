@@ -8,7 +8,6 @@ function getUsers (id, db = connection) {
       'name',
       'email',
       'location')
-    .first()
 }
 
 function addUser (input, db = connection) {

@@ -1,7 +1,8 @@
 const connection = require('./connection')
 
-function getUsers (db = connection) {
+function getUsers (id, db = connection) {
   return db('users')
+    .where('auth0_id', id)
     .select('id',
       'auth0_id as auth0Id',
       'name',

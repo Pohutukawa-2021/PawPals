@@ -10,7 +10,7 @@ function Registeration ({ user }) {
     auth0Id: '',
     name: '',
     email: '',
-    description: ''
+    location: ''
   })
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Registeration ({ user }) {
       auth0Id: user.auth0Id,
       name: user.name,
       email: user.email,
-      description: user.description
+      location: user.location
     })
   }, [user])
 
@@ -69,10 +69,10 @@ function Registeration ({ user }) {
           disabled={true}
         ></input>
 
-        <label htmlFor='description' >Description</label>
+        <label htmlFor='location' >Location</label>
         <textarea
-          name='description'
-          value={form.description}
+          name='location'
+          value={form.location}
           onChange={handleChange}
           cols={3}
         ></textarea>

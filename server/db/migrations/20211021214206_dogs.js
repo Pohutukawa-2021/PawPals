@@ -9,6 +9,7 @@ exports.up = function (knex) {
     table.boolean('desexed')
     table.string('bio')
     table.string('image')
+    table.string('location')
   })
 }
 

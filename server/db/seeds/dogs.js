@@ -11,7 +11,8 @@ exports.seed = function (knex) {
           sex: 'male',
           desexed: true,
           bio: 'playful and loves the water',
-          image: './bam.png'
+          image: './bam.png',
+          location: 'East Auckland'
         },
         {
           id: 2,
@@ -22,7 +23,8 @@ exports.seed = function (knex) {
           sex: 'female',
           desexed: true,
           bio: 'loves running and playing tag',
-          image: './juno.png'
+          image: './juno.png',
+          location: 'South Auckland'
         }
       ])
     })

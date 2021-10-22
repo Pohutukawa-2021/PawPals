@@ -5,6 +5,7 @@ import { cacheUser } from '../auth0-utils'
 import Nav from './Nav'
 import Registeration from './Registeration'
 import { Route } from 'react-router'
+import Dogs from './Dogs'
 
 function App () {
   cacheUser(useAuth0)
@@ -12,7 +13,9 @@ function App () {
   return (
     <div className='app'>
       <Route exact path='/' component={Nav} />
-      <Route exact path='/' component={Registeration} />
+      <Route exact path='/' component={Dogs} />
+      <Route path='/register' component={Registeration} />
+      {/* <Route exact path='/' component={Registeration} /> */}
     </div>
   )
 }

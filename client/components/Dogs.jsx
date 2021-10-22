@@ -17,13 +17,18 @@ function Dogs (props) {
           <Link to={`/dog/${dog.id}`}>
             <img className="dog-image" src={dog.image} alt={dog.name} />
           </Link>
-          <p>Name: {dog.name}</p>
-          <p>Breed: {dog.breed}</p>
-          <p>Age: {dog.age}</p>
-          {/* <p>Sex: {dog.sex}</p>
+          <div className="dog-info">
+            <h3>Name: </h3>
+            <p>{dog.name}</p>
+            <h3>Breed: </h3>
+            <p>{dog.breed}</p>
+            <h3>Age: </h3>
+            <p>{dog.age}</p>
+            {/* <p>Sex: {dog.sex}</p>
           <p>Desexed: {dog.desexed}</p>
           <p>Bio: {dog.bio}</p>
           <p>Location: {dog.location}</p> */}
+          </div>
         </div>
       )}
     </div>

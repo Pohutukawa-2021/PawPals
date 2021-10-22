@@ -8,6 +8,7 @@ import RegisterDog from './RegisterDog'
 import { Route } from 'react-router'
 import Dogs from './Dogs'
 import Dog from './Dog'
+import MyDates from './MyDates'
 
 function App () {
   cacheUser(useAuth0)

@@ -36,6 +36,7 @@ function Nav (props) {
             <a href='/' onClick={handleLogoff} className='nav-link'>Log out</a>
             <Link to='/' replace>Home</Link>
             <Link to='/register-dog' replace >Register Dog</Link>
+            <Link to='/mydates' replace >Dog Dates</Link>
           </section>
         </IfAuthenticated>
         <IfNotAuthenticated>

@@ -11,10 +11,10 @@ function Dogs (props) {
   const { dogs } = props
   return (
     <div>
-      <p>Pick a play date for your dog</p>
+      <h1>Pick a play date for your dog</h1>
       {dogs.map(dog =>
         <div key={dog.id} className="dog-container">
-          <Link to={`/${dog.id}`}>
+          <Link to={`/dog/${dog.id}`}>
             <img className="dog-image" src={dog.image} alt={dog.name} />
           </Link>
           <p>Name: {dog.name}</p>

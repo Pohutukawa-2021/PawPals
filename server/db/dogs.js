@@ -12,15 +12,17 @@ function getDogs (db = connection) {
     .select()
 }
 
-function addDog (newDog, auth0Id, db = connection) {
-  const { breed, name, age, sex, desexed, bio } = newDog
+function addDog (newDog, id, db = connection) {
+  const { breed, name, age, sex, desexed, bio, location } = newDog
   const addNewDog = {
+    user_id: id,
     breed: breed,
     name: name,
     age: age,
     sex: sex,
     desexed: desexed,
-    bio: bio
+    bio: bio,
+    location: location
   }
   return db('dogs')
     .insert(addNewDog)
@@ -30,14 +32,15 @@ function addDog (newDog, auth0Id, db = connection) {
 }
 
 function updateDog (dog, db = connection) {
-  const { id, breed, name, age, sex, desexed, bio } = dog
+  const { id, breed, name, age, sex, desexed, bio, location } = dog
   const updatedDog = {
     breed: breed,
     name: name,
     age: age,
     sex: sex,
     desexed: desexed,
-    bio: bio
+    bio: bio,
+    location: location
   }
   return db('dogs', updatedDog)
     .where('id', id)
@@ -50,7 +53,8 @@ function updateDog (dog, db = connection) {
         age: age,
         sex: sex,
         desexed: desexed,
-        bio: bio
+        bio: bio,
+        location: location
       }
     })
 }

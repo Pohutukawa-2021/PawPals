@@ -19,12 +19,13 @@ function App () {
       <Route path='/register' component={Registeration} />
       <Route path='/register-dog' component={RegisterDog} />
       <Route exact path='/:id' component={Dog} />
+      <Route path='/mydates' component={MyDates} />
+
     </div>
   )
 }
 const mapStateToProps = (globalState) => {
   return {
-    fruits: globalState.fruits,
     token: globalState.user.token
   }
 }

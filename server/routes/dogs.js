@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
 router.get('/', (req, res) => {
   db.getDogs()
     .then(dogs => {
-      console.log(dogs)
       res.json(dogs)
       return null
     })

@@ -7,16 +7,18 @@ import Registeration from './Registeration'
 import RegisterDog from './RegisterDog'
 import { Route } from 'react-router'
 import Dogs from './Dogs'
+import Dog from './Dog'
 
 function App () {
   cacheUser(useAuth0)
 
   return (
     <div className='app'>
-      <Route exact path='/' component={Nav} />
+      <Route path='/' component={Nav} />
       <Route exact path='/' component={Dogs} />
       <Route path='/register' component={Registeration} />
       <Route path='/register-dog' component={RegisterDog} />
+      <Route exact path='/:id' component={Dog} />
     </div>
   )
 }

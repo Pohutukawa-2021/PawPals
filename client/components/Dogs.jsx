@@ -1,16 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { fetchAllDogs } from '../actions/dogs'
 
-function Dogs () {
-  const dogs = useSelector((state) => state.dogs)
+function Dogs (props) {
+  useEffect(() => {
+    props.dispatch(fetchAllDogs())
+  }, [])
+
+  const { dogs } = props
   return (
     <div>
       <p>Pick a play date for your dog</p>
       {dogs.map(dog =>
-        <>
-          <div key={dog.id} className="dog-container">
-            <img className="dog-image" src={dog.image} alt={dog.name} />
-          </div>
+        <div key={dog.id} className="dog-container">
+          <img className="dog-image" src={dog.image} alt={dog.name} />
           <p>Name: {dog.name}</p>
           <p>Breed: {dog.breed}</p>
           <p>Age: {dog.age}</p>
@@ -18,10 +21,16 @@ function Dogs () {
           <p>Desexed: {dog.desexed}</p>
           <p>Bio: {dog.bio}</p>
           <p>Location: {dog.location}</p>
-        </>
+        </div>
       )}
     </div>
   )
 }
 
-export default Dogs
+function mapStateToProps (state) {
+  return {
+    dogs: state.dogs
+  }
+}
+
+export default connect(mapStateToProps)(Dogs)

@@ -12,9 +12,13 @@ export function getDogs () {
     })
 }
 
-export function addDogs (newDog) {
+export function addDogs (newDog, id) {
+  const item = {
+    newDog,
+    id
+  }
   return request.post(rootUrl + '/dogs/')
-    .send(newDog)
+    .send(item)
     .then(res => {
       return res.body
     })

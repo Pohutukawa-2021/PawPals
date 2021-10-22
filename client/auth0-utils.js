@@ -25,7 +25,6 @@ export async function cacheUser (useAuth0) {
         name: user.nickname,
         token
       }
-      console.log("utils:", userToSave)
       saveUser(userToSave)
     } catch (err) {
       console.error(err)

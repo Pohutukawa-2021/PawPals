@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../actions/user'
+import { fetchAllDogs } from '../actions/dogs'
 
 function Users (props) {
   useEffect(() => {

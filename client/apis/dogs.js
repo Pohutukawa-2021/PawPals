@@ -2,8 +2,8 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getDogs (id) {
-  return request.get(rootUrl + '/dogs/' + id)
+export function getDogs () {
+  return request.get(rootUrl + '/dogs/')
     .then(res => {
       return res.body
     })

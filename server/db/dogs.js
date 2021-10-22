@@ -13,7 +13,7 @@ function getDogs (db = connection) {
 }
 
 function addDog (newDog, id, db = connection) {
-  const { breed, name, age, sex, desexed, bio, location } = newDog
+  const { breed, name, age, sex, desexed, bio, image, location } = newDog
   const addNewDog = {
     user_id: id,
     breed: breed,
@@ -22,6 +22,7 @@ function addDog (newDog, id, db = connection) {
     sex: sex,
     desexed: desexed,
     bio: bio,
+    image: image,
     location: location
   }
   return db('dogs')

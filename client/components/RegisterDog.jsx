@@ -81,6 +81,13 @@ function RegisterDog ({ user }) {
           onChange={handleChange}
         ></input>
 
+        <label htmlFor='image' >Image Url</label>
+        <input
+          name='image'
+          value={form.image}
+          onChange={handleChange}
+        ></input>
+
         <label htmlFor='bio' >Bio</label>
         <textarea
           name='bio'

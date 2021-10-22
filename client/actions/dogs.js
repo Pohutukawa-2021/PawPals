@@ -13,7 +13,6 @@ export function fetchAllDogs () {
   return dispatch => {
     return getDogs()
       .then(dogs => {
-        console.log('actions: ', dogs)
         dispatch(setAllDogs(dogs))
         return null
       })

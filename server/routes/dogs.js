@@ -7,9 +7,9 @@ const router = express.Router()
 
 // POST /api/v1/users/protected
 router.post('/', async (req, res) => {
-  const { breed, name, age, sex, desexed, bio } = req.body.newDog
+  const { breed, name, age, sex, desexed, bio, location } = req.body.newDog
   const id = req.body.id
-  const dog = { breed, name, age, sex, desexed, bio }
+  const dog = { breed, name, age, sex, desexed, bio, location }
 
   try {
     await db.addDog(dog, id)

@@ -17,8 +17,7 @@ function Registeration ({ user }) {
     setForm({
       auth0Id: user.auth0Id,
       name: user.name,
-      email: user.email,
-      location: user.location
+      email: user.email
     })
   }, [user])
 
@@ -32,7 +31,6 @@ function Registeration ({ user }) {
 
   async function handleClick (e) {
     e.preventDefault()
-    // registerUser(form, authUser, history.push)
     try {
       await addUser(form)
       history.push('/')
@@ -43,16 +41,8 @@ function Registeration ({ user }) {
 
   return (
     <section className='form'>
-      <h2>Regiser Profile</h2>
+      <h2>Register Profile</h2>
       <form className='registeration'>
-        <label htmlFor='auth0Id'>auth0Id</label>
-        <input
-          name='auth0Id'
-          value={form.auth0Id}
-          onChange={handleChange}
-          disabled={true}
-        ></input>
-
         <label htmlFor='name'>Name</label>
         <input
           name='name'
@@ -70,18 +60,20 @@ function Registeration ({ user }) {
         ></input>
 
         <label htmlFor='location' >Location</label>
-        <textarea
+        <input
           name='location'
           value={form.location}
           onChange={handleChange}
           cols={3}
-        ></textarea>
-        <button
-          type='button'
-          onClick={handleClick}
-        >
+        ></input>
+        <div className='basicButton'>
+          <button className='register-button'
+            type='button'
+            onClick={handleClick}
+          >
           Register
-        </button>
+          </button>
+        </div>
       </form>
     </section>
   )

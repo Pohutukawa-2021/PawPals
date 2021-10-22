@@ -1,5 +1,5 @@
 import { setUser } from './actions/user'
-import { getUserRoles } from './apis/users'
+// import { getUserRoles } from './apis/users'
 import store from './store'
 
 const emptyUser = {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MyDates (props) {
+function MyDates () {
   return (
     <div>
       <p>No dates booked</p>

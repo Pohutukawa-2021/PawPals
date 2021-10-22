@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 function Dog (props) {
   const { id } = useParams()
+  console.log('dog.jsx is being hit: ', id)
   const dog = props.dogs.find(dog => dog.id == id)
   return (
     <div>

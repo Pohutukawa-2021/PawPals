@@ -14,7 +14,7 @@ function Dogs (props) {
       <p>Pick a play date for your dog</p>
       {dogs.map(dog =>
         <div key={dog.id} className="dog-container">
-          <Link to={`/${dog.id}`}>
+          <Link to={`/dog/${dog.id}`}>
             <img className="dog-image" src={dog.image} alt={dog.name} />
           </Link>
           <p>Name: {dog.name}</p>

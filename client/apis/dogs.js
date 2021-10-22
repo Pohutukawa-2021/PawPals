@@ -2,8 +2,8 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getDogs (id) {
-  return request.get(rootUrl + '/dogs/' + id)
+export function getDogs () {
+  return request.get(rootUrl + '/dogs/')
     .then(res => {
       return res.body
     })
@@ -12,9 +12,13 @@ export function getDogs (id) {
     })
 }
 
-export function addDogs (newDog) {
+export function addDogs (newDog, id) {
+  const item = {
+    newDog,
+    id
+  }
   return request.post(rootUrl + '/dogs/')
-    .send(newDog)
+    .send(item)
     .then(res => {
       return res.body
     })

@@ -22,7 +22,7 @@ function addDog (newDog, auth0Id, db = connection) {
     desexed: desexed,
     bio: bio
   }
-  return db('dog')
+  return db('dogs')
     .insert(addNewDog)
     .then(() => {
       return null
